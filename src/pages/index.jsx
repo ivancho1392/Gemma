@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Layout from "../Components/Layout";
 import Card from "../Components/Card";
-import { data } from "autoprefixer";
+import ProductDetail from "../Components/ProductDetail";
 
 export default function Home() {
   const [items, setItems] = useState();
@@ -9,58 +9,66 @@ export default function Home() {
     {
       id: 1,
       imageSrc: "/1.PNG",
-      category: "Set Lenceria",
+      category: "Sets de Lenceria",
       price: 55000,
       name: "Set Negro",
+      description: "Juego de lenceria de tres piezas con finos materiales y detalles.",
     },
     {
       id: 2,
       imageSrc: "/VarillaBlanco.PNG",
-      category: "Set Lenceria",
+      category: "Sets de Lenceria",
       price: 58000,
       name: "Set Varilla Blanco",
+      description: "Juego de lenceria de tres piezas con finos materiales y detalles.",
     },
     {
       id: 3,
       imageSrc: "/VarillaNegro.PNG",
-      category: "Set Lenceria",
+      category: "Sets de Lenceria",
       price: 5500,
       name: "Set Varilla Negro",
+      description: "Juego de lenceria de tres piezas con finos materiales y detalles.",
     },
     {
       id: 4,
       imageSrc: "/NeoRojo.PNG",
-      category: "Set Lenceria",
+      category: "Sets de Lenceria",
       price: 66000,
       name: "Set Neo Rojo",
+      description: "Juego de lenceria de tres piezas con finos materiales y detalles.",
     },
     {
       id: 5,
       imageSrc: "/OliviaBicolor.jpeg",
-      category: "Set Lenceria",
+      category: "Sets de Lenceria",
       price: 48000,
       name: "Set Olivia Bicolor",
+      description: "Juego de lenceria de tres piezas con finos materiales y detalles.",
     },
     {
       id: 6,
       imageSrc: "/Anastasia.PNG",
-      category: "Set Lenceria",
+      category: "Sets de Lenceria",
       price: 60000,
       name: "Set Anastasia",
+      description: "Juego de lenceria de tres piezas con finos materiales y detalles.",
     },
     {
       id: 7,
       imageSrc: "/VarillaLigero.PNG",
-      category: "Set Lenceria",
+      category: "Sets de Lenceria",
       price: 52000,
       name: "Set Varilla Liguero",
+      description: "Juego de lenceria de tres piezas con finos materiales y detalles.",
     },
     {
       id: 8,
       imageSrc: "/Vaqueras1.PNG",
-      category: "Botas",
+      category: "Botas para dama",
       price: 230000,
       name: "Botas Vaqueras 1",
+      description: "Hermosas botas en tendencia.",
     },
   ];
 
@@ -82,10 +90,11 @@ export default function Home() {
               category={product.category}
               price={product.price}
               name={product.name}
+              product={product}
             />
           ))}
         </div>
-        <div className="grid grid-cols-3 gap-8">
+        {/* <div className="grid grid-cols-3 gap-8">
           {items?.map((datas) => (
             <Card
               key={datas.id}
@@ -95,7 +104,8 @@ export default function Home() {
               name={datas.title}
             />
           ))}
-        </div>
+        </div> */}
+        <ProductDetail />
       </Layout>
     </>
   );

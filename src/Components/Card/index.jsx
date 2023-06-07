@@ -3,11 +3,18 @@ import { MdOutlineAdd } from 'react-icons/md';
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
 
-const Card = ({imageSrc, category, price, name}) => {
+const Card = ({imageSrc, category, price, name, product}) => {
     const context = useContext(ShoppingCartContext);
 
+    const showProduct = (productDetail) => {
+        context.openProductDetail();
+        context.setProductToShow(productDetail);
+    }
+
     return (
-        <div className='bg-white w-65 h-30 rounded-lg mb-16'>
+        <div 
+            className='bg-white w-65 h-30 rounded-lg mb-16'
+            onClick={() => showProduct(product)}>
             <figure className='relative mb-2 w-full h-full'>
                 <span className='absolute bottom-0 left-0 bg-black/10 rounded-lg text-black text-sm font-medium m-2'>{category}</span>
                 <Image className='rounded-lg' src={imageSrc} alt="1" width={200} height={300}/>

@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
+import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 const Navbar = () => {
   const context = useContext(ShoppingCartContext);
@@ -111,7 +112,7 @@ const Navbar = () => {
             <a className={isActiveLink("/SignIn")}>SignIn</a>
           </Link>
         </li>
-        <li>🛒 {context.count}</li>
+        <li className='flex '><HiOutlineShoppingBag className='h-6 w-6'/> {context.count}</li>
       </ul>
     </nav>
   );
