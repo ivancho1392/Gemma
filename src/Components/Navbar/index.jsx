@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../Context";
 
 const Navbar = () => {
+  const context = useContext(ShoppingCartContext);
   const router = useRouter();
 
   const isActiveLink = (pathname) => {
@@ -30,6 +33,17 @@ const Navbar = () => {
         </li>
         <li>
           <Link
+            href="/Botas"
+            passHref
+            scroll={false}
+            scrollOptions={{ top: 0 }}
+            legacyBehavior
+          >
+            <a className={isActiveLink("/Botas")}>Botas</a>
+          </Link>
+        </li>
+        <li>
+          <Link
             href="/Lingerie"
             passHref
             scroll={false}
@@ -48,17 +62,6 @@ const Navbar = () => {
             legacyBehavior
           >
             <a className={isActiveLink("/Pyjamas")}>Pyjamas</a>
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/PlusSize"
-            passHref
-            scroll={false}
-            scrollOptions={{ top: 0 }}
-            legacyBehavior
-          >
-            <a className={isActiveLink("/PlusSize")}>Plus Size</a>
           </Link>
         </li>
         <li>
@@ -108,7 +111,7 @@ const Navbar = () => {
             <a className={isActiveLink("/SignIn")}>SignIn</a>
           </Link>
         </li>
-        <li>🛒 0</li>
+        <li>🛒 {context.count}</li>
       </ul>
     </nav>
   );

@@ -4,3 +4,9 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+module.exports = {
+  images: {
+    domains: ['picsum.photos', 'encrypted-tbn0.gstatic.com', 'placeimg.com', 'api.escuelajs.co'],
+  },
+};
