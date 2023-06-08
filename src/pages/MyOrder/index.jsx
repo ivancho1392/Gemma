@@ -5,12 +5,24 @@ import ProductList from "../../Components/ProductList";
 
 export default function MyOrder() {
   const context = useContext(ShoppingCartContext);
+  const lastOrder = context.order?.slice(-1)[0];
+
+  if (!lastOrder || !lastOrder.products) {
+    return (
+      <>
+        <Layout>
+          <p>No hay productos en la orden.</p>
+        </Layout>
+      </>
+    );
+  }
+
   return (
     <>
       <Layout>
         MyOrder
         <div className="flex flex-col w-80">
-          {context.order?.slice(-1)[0].products.map(product => (
+          {lastOrder.products.map((product) => (
             <ProductList
               key={product.id}
               id={product.id}
