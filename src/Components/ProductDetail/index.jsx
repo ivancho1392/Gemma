@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import styles from "./styles.module.css";
 import { GrClose } from "react-icons/gr";
-import { MdOutlineAdd } from "react-icons/md";
 import Image from "next/image";
 import { ShoppingCartContext } from "../../Context";
 
@@ -16,7 +15,7 @@ const ProductDetail = () => {
       <div className="flex justify-between items-center p-6">
         <h2 className="font-medium text-lg">Detail</h2>
         <div
-          className="flex justify-center items-center cursor-pointer  bg-white rounded-full w-6 h-6"
+          className="flex justify-center items-center cursor-pointer  bg-white rounded-full w-6 h-6 transform transition-all duration-300 hover:scale-110 hover:bg-black/5"
           onClick={() => context.closeProductDetail()}
         >
           <GrClose />

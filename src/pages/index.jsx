@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Layout from "../Components/Layout";
 import Card from "../Components/Card";
 import ProductDetail from "../Components/ProductDetail";
+import CheckoutSideMenu from "../Components/CheckoutSideMenu";
 
 export default function Home() {
   const [items, setItems] = useState();
@@ -79,10 +80,10 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <Layout>
+    <div>
+      <Layout >
         Home
-        <div className='grid grid-cols-3 gap-8'>
+        <div className='grid grid-cols-3 gap-8 '>
           {products.map((product) => (
             <Card
               key={product.id}
@@ -106,7 +107,8 @@ export default function Home() {
           ))}
         </div> */}
         <ProductDetail />
+        <CheckoutSideMenu />
       </Layout>
-    </>
+    </div>
   );
 }
