@@ -48,13 +48,13 @@ const Card = ({ imageSrc, category, price, name, product }) => {
       className="bg-white w-65 h-30 rounded-lg mb-16 cursor-pointer transform transition-all duration-300 hover:scale-110 hover:shadow-lg"
       onClick={() => showProduct(product)}
     >
-      <figure className="relative mb-2 w-full h-full">
-        <span className="absolute bottom-0 left-0 bg-black/10 rounded-lg text-black text-sm font-medium m-2">
+      <figure className="relative mb-2 w-40 h-60">
+        <span className="absolute bottom-0 left-0 bg-white/70 rounded-lg text-black text-sm font-medium m-2">
           {category}
         </span>
         {renderIcon(product.id)}
         <Image
-          className="rounded-lg"
+          className="rounded-lg object-cover w-full h-full"
           src={imageSrc}
           alt="1"
           width={200}

@@ -81,13 +81,13 @@ const Navbar = () => {
         <li className="text-black/60">correo@mail.com</li>
         <li>
           <Link
-            href="/MyOrders"
+            href="/MyOrder"
             passHref
             scroll={false}
             scrollOptions={{ top: 0 }}
             legacyBehavior
           >
-            <a className={isActiveLink("/MyOrders")}>MyOrders</a>
+            <a className={isActiveLink("/MyOrder")}>MyOrder</a>
           </Link>
         </li>
         <li>
