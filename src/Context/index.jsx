@@ -36,6 +36,18 @@ export const ShoppingCartProvider = ({ children }) => {
   //ShoppingCart . Order
   const [order, setOrder] = useState([]);
 
+  //ThreeBar . Open/close/toggle
+  const [isThreeBarsOpen, setIsThreeBarsOpen] = useState(false);
+  const openThreebars = () => {
+    setIsThreeBarsOpen(true);
+  };
+  const closeThreebars = () => {
+    setIsThreeBarsOpen(false);
+  };
+  const ToggleThreebars= () => {
+    setIsThreeBarsOpen(!isThreeBarsOpen);
+  };
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -53,7 +65,11 @@ export const ShoppingCartProvider = ({ children }) => {
         isCheckoutSideMenuOpen,
         ToggleCheckOut,
         order,
-        setOrder
+        setOrder,
+        isThreeBarsOpen,
+        openThreebars,
+        closeThreebars,
+        ToggleThreebars
       }}
     >
       {children}

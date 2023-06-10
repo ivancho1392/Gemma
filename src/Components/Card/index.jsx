@@ -11,6 +11,7 @@ const Card = ({ imageSrc, category, price, name, product }) => {
     context.openProductDetail();
     context.setProductToShow(productDetail);
     context.closeCheckOut();
+    context.closeThreebars();
   };
 
   const addProductToCart = (event, productData) => {
@@ -19,6 +20,7 @@ const Card = ({ imageSrc, category, price, name, product }) => {
     context.setCount(context.count + 1);
     context.openCheckOut();
     context.closeProductDetail();
+    context.closeThreebars();
   };
 
   const renderIcon = (id) => {

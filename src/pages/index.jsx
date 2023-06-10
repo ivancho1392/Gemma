@@ -1,19 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import Layout from "../Components/Layout";
 import Card from "../Components/Card";
-import ProductDetail from "../Components/ProductDetail";
-import CheckoutSideMenu from "../Components/CheckoutSideMenu";
 import { productsArray } from "../utils/productsArray";
 import VideoComponent from "../Components/VideoComponent";
 
-export default function Home() {
-  const [items, setItems] = useState();
 
-  useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products")
-      .then((response) => response.json())
-      .then((data) => setItems(data));
-  }, []);
+export default function Home() {
 
   return (
     <div>
@@ -32,19 +24,6 @@ export default function Home() {
             />
           ))}
         </div>
-        {/* <div className="grid grid-cols-3 gap-8">
-          {items?.map((datas) => (
-            <Card
-              key={datas.id}
-              imageSrc={datas.images[0]}
-              category={datas.category.name}
-              price={datas.price}
-              name={datas.title}
-            />
-          ))}
-        </div> */}
-        <ProductDetail />
-        <CheckoutSideMenu />
       </Layout>
     </div>
   );
