@@ -23,7 +23,7 @@ const VideoComponent = () => {
 
   return (
     <video autoPlay muted loop>
-      <source src="/Videos/IMG_2349.mov" type="video/quicktime" />
+      <source src="/Videos/video1mp4.mp4" type="video/mp4" />
       {/* Agrega aquí otros formatos de video si es necesario */}
       Tu navegador no admite el elemento de video.
     </video>

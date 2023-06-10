@@ -11,7 +11,7 @@ export const productsArray = [
       id: 23,
       imageSrc: "/FotosDefinitivas/2.png",
       category: "Botas",
-      price: 170000,
+      price: 150000,
       name: "Botas 2",
       description: "Botas en cuero text 100% garantizado.",
     },
