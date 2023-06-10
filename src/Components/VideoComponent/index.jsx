@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-const VideoComponent = () => {
+const VideoComponent = ({videoSrc}) => {
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const VideoComponent = () => {
 
   return (
     <video autoPlay muted loop>
-      <source src="/Videos/video1mp4.mp4" type="video/mp4" />
+      <source src={videoSrc} type="video/mp4" />
       {/* Agrega aquí otros formatos de video si es necesario */}
       Tu navegador no admite el elemento de video.
     </video>

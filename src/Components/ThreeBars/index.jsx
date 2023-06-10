@@ -13,7 +13,7 @@ const ThreeBars = () => {
       } shadow-2xl bg-white fixed left-0 border border-black rounded-lg flex-col p-6`}
     >
       <ul>
-        <li className="mb-2">
+        <li className="mb-2 ">
           <Link
             href="/"
             passHref
@@ -21,7 +21,7 @@ const ThreeBars = () => {
             scrollOptions={{ top: 0 }}
             legacyBehavior
           >
-            <a
+            <a className='font-bold text-lg'
               onClick={() => {
                 context.closeThreebars();
               }}
@@ -66,6 +66,23 @@ const ThreeBars = () => {
         </li>
         <li className="mb-2">
           <Link
+            href="/Calzado"
+            passHref
+            scroll={false}
+            scrollOptions={{ top: 0 }}
+            legacyBehavior
+          >
+            <a
+              onClick={() => {
+                context.closeThreebars();
+              }}
+            >
+              Calzado
+            </a>
+          </Link>
+        </li>
+        <li className="mb-2">
+          <Link
             href="/Pyjamas"
             passHref
             scroll={false}
@@ -77,7 +94,7 @@ const ThreeBars = () => {
                 context.closeThreebars();
               }}
             >
-              Pyjamas
+              Croptop
             </a>
           </Link>
         </li>

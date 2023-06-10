@@ -1,5 +1,7 @@
 .ThreeBars{
-    width: 120px;
-    height: 180px;
-    top: 70px;
+    width: 360px;
+    top: 78px;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+
 }

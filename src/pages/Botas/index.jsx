@@ -3,11 +3,13 @@ import Card from "../../Components/Card";
 import ProductDetail from "../../Components/ProductDetail";
 import CheckoutSideMenu from "../../Components/CheckoutSideMenu";
 import { productsArray } from "../../utils/productsArray";
+import VideoComponent from "../../Components/VideoComponent";
 
 export default function Botas() {
   return (
     <>
       <Layout>
+        <VideoComponent videoSrc={"/Videos/video1mp4.mp4"} />
         Botas
         <div className="grid grid-cols-4 gap-8 ">
           {productsArray
