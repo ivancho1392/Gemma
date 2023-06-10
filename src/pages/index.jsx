@@ -4,6 +4,7 @@ import Card from "../Components/Card";
 import ProductDetail from "../Components/ProductDetail";
 import CheckoutSideMenu from "../Components/CheckoutSideMenu";
 import { productsArray } from "../utils/productsArray";
+import VideoComponent from "../Components/VideoComponent";
 
 export default function Home() {
   const [items, setItems] = useState();
@@ -17,8 +18,9 @@ export default function Home() {
   return (
     <div>
       <Layout >
+        <VideoComponent />
         Todos los Productos
-        <div className='grid grid-cols-2 sm:grid-cols-3 gap-4 mr-4 ml-4 '>
+        <div className='grid grid-cols-2 sm:grid-cols-3 gap-8 mr-4 ml-4 '>
           {productsArray.map((product) => (
             <Card
               key={product.id}
