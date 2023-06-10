@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const VideoComponent = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -18,7 +19,15 @@ const VideoComponent = () => {
   }, []);
 
   if (!showVideo) {
-    return null; // No renderizar nada si el tamaño de la pantalla no es menor a 800px
+    return (
+      <Image
+      className="rounded-lg object-cover w-full h-full"
+      src="/Banners/banner1.png"
+      alt="1"
+      width={801}
+      height={100}
+    />
+    )
   }
 
   return (
