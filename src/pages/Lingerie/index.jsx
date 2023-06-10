@@ -8,8 +8,8 @@ export default function Lingerie() {
   return (
     <>
       <Layout>
-        Lingerie
-        <div className="grid grid-cols-4 gap-8 ">
+      <h1 className='text-3xl mt-8'>Lingerie</h1>
+        <div className="grid grid-cols-2 sm:grid-cols-3">
           {productsArray
             .filter((product) => product.category === "Sets de Lenceria")
             .map((product) => (

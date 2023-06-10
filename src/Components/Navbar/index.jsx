@@ -35,7 +35,17 @@ const Navbar = () => {
       <ul className="flex items-end gap-3">
         <li className="font-semibold text-lg">
           <Link href="/">
-            <Image src="/Logos/logogema.svg" alt="1" width={80} height={80} />
+            <Image 
+            src="/Logos/logogema.svg" 
+            alt="1" 
+            width={80} 
+            height={80} 
+            onClick={() => {
+              context.closeCheckOut();
+              context.closeProductDetail();
+              context.closeThreebars();
+            }}
+            />
           </Link>
         </li>
         <div className="hidden sm:block">
@@ -47,14 +57,20 @@ const Navbar = () => {
               scrollOptions={{ top: 0 }}
               legacyBehavior
             >
-              <a className={isActiveLink("/Todos")}>Todos</a>
+              <a className={isActiveLink("/Todos")}
+            onClick={() => {
+              context.closeCheckOut();
+              context.closeProductDetail();
+              context.closeThreebars();
+            }}
+            >Todos</a>
             </Link>
           </li>
         </div>
         <div className="hidden sm:block">
           <li>
             <a
-              className={isActiveLink("/Categorias")}
+              className='cursor-pointer'
               onClick={() => {
                 context.closeCheckOut();
                 context.closeProductDetail();

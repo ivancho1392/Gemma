@@ -1,19 +1,13 @@
 import Layout from "../../Components/Layout";
 import Card from "../../Components/Card";
 import { productsArray } from "../../utils/productsArray";
-import VideoComponent from "../../Components/VideoComponent";
 
-
-export default function Home() {
-
+export default function Todos() {
   return (
     <div>
       <Layout >
-        <VideoComponent 
-        videoSrc={"/Videos/videoHome.mp4"}
-        />
-        <h1 className='text-3xl p-8'>Todos los productos</h1>
-        <div className='grid grid-cols-2 sm:grid-cols-3 gap-8 mr-4 ml-4 '>
+        <h1 className='text-3xl mt-8'>Todos los productos</h1>
+        <div className='grid grid-cols-2 sm:grid-cols-3'>
           {productsArray.map((product) => (
             <Card
               key={product.id}

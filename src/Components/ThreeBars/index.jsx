@@ -83,7 +83,7 @@ const ThreeBars = () => {
         </li>
         <li className="mb-2">
           <Link
-            href="/Pyjamas"
+            href="/Croptops"
             passHref
             scroll={false}
             scrollOptions={{ top: 0 }}

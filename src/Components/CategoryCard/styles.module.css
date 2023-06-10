@@ -1,6 +1,7 @@
 .categoryCard {
-    height: calc(50vh);
+    height: auto;
     width: auto;
+    margin: 4px;
   }
   
   @media screen and (min-width: 500px) {

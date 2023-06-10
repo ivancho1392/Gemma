@@ -8,10 +8,10 @@ const CategoryCard = ({ imageSrc, category}) => {
 
   return (
     <div
-      className={`${styles.categoryCard} bg-white categoryCard rounded-lg mb-16 cursor-pointer transform transition-all duration-300 hover:scale-110 hover:shadow-lg`}
+      className={`${styles.categoryCard} bg-white categoryCard rounded-lg cursor-pointer transform transition-all duration-300 hover:scale-110 hover:shadow-lg`}
     >
-      <figure className="relative mb-2">
-        <span className="absolute bottom-0 bg-white/70 rounded-lg text-black text-2xl font-medium m-2">
+      <figure className="relative">
+        <span className="absolute bottom-0 left-0 right-0 text-center bg-white/70 rounded-lg text-black text-2xl font-medium m-2">
           {category}
         </span>
         <Image

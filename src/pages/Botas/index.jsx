@@ -10,8 +10,8 @@ export default function Botas() {
     <>
       <Layout>
         <VideoComponent videoSrc={"/Videos/video1mp4.mp4"} />
-        Botas
-        <div className="grid grid-cols-4 gap-8 ">
+        <h1 className='text-3xl mt-8'>Botas</h1>
+        <div className="grid grid-cols-2 sm:grid-cols-3">
           {productsArray
             .filter((product) => product.category === "Botas")
             .map((product) => (

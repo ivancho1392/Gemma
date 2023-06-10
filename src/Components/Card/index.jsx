@@ -47,10 +47,10 @@ const Card = ({ imageSrc, category, price, name, product }) => {
 
   return (
     <div
-      className="bg-white w-100 h-70 rounded-lg mb-16 cursor-pointer transform transition-all duration-300 hover:scale-110 hover:shadow-lg"
+      className="bg-white w-100 h-70 rounded-lg m-4 cursor-pointer transform transition-all duration-300 hover:scale-110 hover:shadow-lg"
       onClick={() => showProduct(product)}
     >
-      <figure className="relative mb-2 w-50 h-50">
+      <figure className="relative">
         <span className="absolute bottom-0 left-0 bg-white/70 rounded-lg text-black text-sm font-medium m-2">
           {category}
         </span>
