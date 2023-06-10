@@ -58,17 +58,17 @@ export default function Home() {
           </button>
         </Link>
         <div className='md:flex justify-between w-full p-8'>
-          <ul className='ml-40 mr-40 md:mr-0'>
-            <li>¿Cómo comprar?</li>
-            <li>Cambios y Devoluciones</li>
-            <li>Politica de Tratamiento de Datos</li>
-            <li>Envios</li>
+          <ul className='md:ml-20'>
+            <li className="flex justify-center  cursor-pointer">¿Cómo comprar?</li>
+            <li className="flex justify-center  cursor-pointer">Cambios y Devoluciones</li>
+            <li className="flex justify-center  cursor-pointer">Politica de Tratamiento de Datos</li>
+            <li className="flex justify-center  cursor-pointer">Envios</li>
           </ul>
-          <ul className='mr-40 ml-40 md:ml-0'>
-            <li>Preguntas Frecuentes</li>
-            <li>Ayuda</li>
-            <li>Contacto</li>
-            <li>Sugerencias, Quejas y Reclamos</li>
+          <ul className='md:mr-20'>
+            <li className="flex justify-center  cursor-pointer">Preguntas Frecuentes</li>
+            <li className="flex justify-center  cursor-pointer">Ayuda</li>
+            <li className="flex justify-center  cursor-pointer">Contacto</li>
+            <li className="flex justify-center  cursor-pointer">Sugerencias, Quejas y Reclamos</li>
           </ul>
         </div>
       </Layout>
