@@ -7,7 +7,6 @@ import { HiOutlineShoppingBag } from "react-icons/hi";
 import { LuShoppingBag } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
 import { IoReorderThreeOutline } from "react-icons/io5";
-import ThreeBars from "../ThreeBars";
 
 const Navbar = () => {
   const context = useContext(ShoppingCartContext);
@@ -36,33 +35,34 @@ const Navbar = () => {
       <ul className="flex items-end gap-3">
         <li className="font-semibold text-lg">
           <Link href="/">
-            <Image src="/LogoGEMMA.jpeg" alt="1" width={80} height={80} />
+            <Image src="/Logos/logogema.svg" alt="1" width={80} height={80} />
           </Link>
         </li>
         <div className="hidden sm:block">
           <li>
             <Link
-              href="/"
+              href="/Todos"
               passHref
               scroll={false}
               scrollOptions={{ top: 0 }}
               legacyBehavior
             >
-              <a className={isActiveLink("/")}>Todos</a>
+              <a className={isActiveLink("/Todos")}>Todos</a>
             </Link>
           </li>
         </div>
         <div className="hidden sm:block">
           <li>
-            <Link
-              href="/Categorias"
-              passHref
-              scroll={false}
-              scrollOptions={{ top: 0 }}
-              legacyBehavior
+            <a
+              className={isActiveLink("/Categorias")}
+              onClick={() => {
+                context.closeCheckOut();
+                context.closeProductDetail();
+                context.ToggleThreebars();
+              }}
             >
-              <a className={isActiveLink("/Categorias")}>Categorias</a>
-            </Link>
+              Categorias
+            </a>
           </li>
         </div>
       </ul>
@@ -76,7 +76,16 @@ const Navbar = () => {
               scrollOptions={{ top: 0 }}
               legacyBehavior
             >
-              <a className={isActiveLink("/MyOrder")}>Mi Pedido</a>
+              <a
+                className={isActiveLink("/MyOrder")}
+                onClick={() => {
+                  context.closeCheckOut();
+                  context.closeProductDetail();
+                  context.ToggleThreebars();
+                }}
+              >
+                Mi Pedido
+              </a>
             </Link>
           </li>
         </div>

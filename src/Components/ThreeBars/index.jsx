@@ -15,7 +15,7 @@ const ThreeBars = () => {
       <ul>
         <li className="mb-2 ">
           <Link
-            href="/"
+            href="/Todos"
             passHref
             scroll={false}
             scrollOptions={{ top: 0 }}
@@ -94,7 +94,7 @@ const ThreeBars = () => {
                 context.closeThreebars();
               }}
             >
-              Croptop
+              Croptops
             </a>
           </Link>
         </li>

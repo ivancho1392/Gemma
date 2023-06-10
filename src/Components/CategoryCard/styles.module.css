@@ -1,0 +1,39 @@
+.categoryCard {
+    height: calc(50vh);
+    width: auto;
+  }
+  
+  @media screen and (min-width: 500px) {
+    .categoryCard {
+      height: 300px;
+      width: 240px;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .categoryCard {
+      height: 250px;
+      width: 200px;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .categoryCard {
+      height: 277px;
+      width: 222px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .categoryCard {
+      height: 400px;
+      width: 320px;
+    }
+  }
+  
+  @media screen and (min-width: 1290px) {
+    .categoryCard {
+      height: 500px;
+      width: 400px;
+    }
+  }
