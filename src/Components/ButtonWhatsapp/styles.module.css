@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.btnInstagram {
+  position: relative;
+}
+
 .btnWhatsapp:before,
 .btnWhatsapp:after {
   content: "";
@@ -17,6 +21,21 @@
   opacity: 0;
 }
 
+.btnInstagram:before,
+.btnInstagram:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+  background-color: #b300b9;
+  animation: onda 1.7s infinite;
+  opacity: 0;
+}
+
 .btnWhatsapp:before {
   animation-delay: 1s;
 }
@@ -25,9 +44,24 @@
   animation-delay: 1.3s;
 }
 
-.btnWhatsappImage {
+.btnInstagram:before {
+  animation-delay: 1s;
+}
+
+.btnInstagram:after {
+  animation-delay: 1.3s;
+}
+
+.btnWhatsappImage{
   position: relative;
   z-index: 2;
+}
+
+.btnInstagramImage {
+  position: relative;
+  z-index: 2;
+  left: 2px;
+  top: 3px;
 }
 
 @keyframes onda {
@@ -36,11 +70,11 @@
   }
 
   15% {
-    opacity: 1;
+    opacity: 0.8;
   }
 
   100% {
-    transform: scale(2);
+    transform: scale(1.7);
     opacity: 0;
   }
 }
@@ -51,8 +85,17 @@
     height: 70px;
   }
 
+  .btnInstagramImage {
+    width: 60px;
+    height: 60px;
+    left: 5px;
+    top: 5px;
+  }
+
   .btnWhatsapp:before,
-  .btnWhatsapp:after {
+  .btnWhatsapp:after,
+  .btnInstagram:before,
+  .btnInstagram:after {
     top: 5px;
     left: 5px;
     width: 60px;
@@ -61,11 +104,11 @@
     opacity: 0;
   }
 
-  .btnWhatsapp:before {
+  .btnInstagram:before,.btnWhatsapp:before {
     animation-delay: 1s;
   }
 
-  .btnWhatsapp:after {
+  .btnInstagram:after, .btnWhatsapp:after {
     animation-delay: 1.3s;
   }
 }
