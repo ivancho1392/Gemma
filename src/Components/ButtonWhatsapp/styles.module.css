@@ -1,25 +1,71 @@
-.btnWhatsapp{
-    position: relative;
+.btnWhatsapp {
+  position: relative;
 }
 
 .btnWhatsapp:before,
 .btnWhatsapp:after {
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 4px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: #00e676;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #00e676;
+  animation: onda 1.7s infinite;
+  opacity: 0;
 }
 
-.btnWhatsapp Image {
-    position: relative;
-    z-index: 2;
+.btnWhatsapp:before {
+  animation-delay: 1s;
 }
 
-.btnWhatsappSmall {
-    width: 50px;
-    height: 50px;
+.btnWhatsapp:after {
+  animation-delay: 1.3s;
+}
+
+.btnWhatsappImage {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes onda {
+  0% {
+    transform: scale(1);
   }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .btnWhatsappImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .btnWhatsapp:before,
+  .btnWhatsapp:after {
+    top: 5px;
+    left: 5px;
+    width: 60px;
+    height: 60px;
+    animation: onda 1.7s infinite;
+    opacity: 0;
+  }
+
+  .btnWhatsapp:before {
+    animation-delay: 1s;
+  }
+
+  .btnWhatsapp:after {
+    animation-delay: 1.3s;
+  }
+}

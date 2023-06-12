@@ -4,6 +4,7 @@ import Card from "../Components/Card";
 import VideoComponent from "../Components/VideoComponent";
 import Link from "next/link";
 import { productsArrayTrends } from "../utils/productsArrayTrends";
+import ListFooter from "../Components/ListFooter";
 
 export default function Home() {
   return (
@@ -57,20 +58,7 @@ export default function Home() {
             Ver Todos
           </button>
         </Link>
-        <div className='md:flex justify-between w-full p-8'>
-          <ul className='md:ml-20'>
-            <li className="flex justify-center  cursor-pointer">¿Cómo comprar?</li>
-            <li className="flex justify-center  cursor-pointer">Cambios y Devoluciones</li>
-            <li className="flex justify-center  cursor-pointer">Politica de Tratamiento de Datos</li>
-            <li className="flex justify-center  cursor-pointer">Envios</li>
-          </ul>
-          <ul className='md:mr-20'>
-            <li className="flex justify-center  cursor-pointer">Preguntas Frecuentes</li>
-            <li className="flex justify-center  cursor-pointer">Ayuda</li>
-            <li className="flex justify-center  cursor-pointer">Contacto</li>
-            <li className="flex justify-center  cursor-pointer">Sugerencias, Quejas y Reclamos</li>
-          </ul>
-        </div>
+        <ListFooter />
       </Layout>
     </div>
   );
