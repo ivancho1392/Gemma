@@ -30,6 +30,7 @@ const CheckoutSideMenu = () => {
     context.closeCheckOut();
   };
 
+
   return (
     <aside
       className={`${context.isCheckoutSideMenuOpen ? "flex" : "hidden"} ${

@@ -20,8 +20,8 @@ export default function MyOrder() {
   return (
     <>
       <Layout>
-        MyOrder
-        <div className="flex flex-col w-80">
+        <h1 className="text-2xl mt-8">Mi Pedido</h1>
+        <div className="flex flex-col w-80 mt-4">
           {lastOrder.products.map((product) => (
             <ProductList
               key={product.id}
@@ -31,6 +31,13 @@ export default function MyOrder() {
               imageSrc={product.imageSrc}
             />
           ))}
+
+          <p className="flex justify-between items-center mb-2">
+            <span className="font-light">Total:</span>
+            <span className="font-medium text-2xl">
+              ${lastOrder.totalPrice}
+            </span>
+          </p>
         </div>
       </Layout>
     </>

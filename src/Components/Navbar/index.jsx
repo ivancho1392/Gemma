@@ -97,7 +97,7 @@ const Navbar = () => {
                 onClick={() => {
                   context.closeCheckOut();
                   context.closeProductDetail();
-                  context.ToggleThreebars();
+                  context.closeThreebars();
                 }}
               >
                 Mi Pedido
