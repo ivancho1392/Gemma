@@ -17,7 +17,7 @@ export const ButtonWhatsapp = () => {
         </Link>
       </div>
       <div>
-        <Link className={styles.btnInstagram} href="http://ig.me/m/ras_ivan1406">
+        <Link className={styles.btnInstagram} href="https://www.instagram.com/gemmaboutiquecol_/">
           <Image
             className={styles.btnInstagramImage}
             src="/Logos/Instagram.png"
