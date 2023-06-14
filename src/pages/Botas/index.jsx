@@ -9,7 +9,7 @@ export default function Botas() {
   return (
     <>
       <Layout>
-        <VideoComponent videoSrc={"/Videos/video1mp4.mp4"} />
+        <VideoComponent videoSrc={"https://gemmastore.s3.amazonaws.com/videos/videoBotas.mp4"} />
         <h1 className='text-3xl mt-8'>Botas</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3">
           {productsArray

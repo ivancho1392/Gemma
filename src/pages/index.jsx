@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <Layout>
-        <VideoComponent videoSrc={"/Videos/videoHome.mp4"} />
+        <VideoComponent videoSrc={"https://gemmastore.s3.amazonaws.com/videos/videoHome.mp4"} />
         <h1 className="text-3xl p-4 mt-4">Categorias</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 ">
           <Link href="/Botas">
