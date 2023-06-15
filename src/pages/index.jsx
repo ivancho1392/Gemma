@@ -15,25 +15,25 @@ export default function Home() {
         <div className="grid grid-cols-2 sm:grid-cols-3 ">
           <Link href="/Botas">
             <CategoryCard
-              imageSrc="/FotosDefinitivas/25.png"
+              imageSrc={"https://gemmastore.s3.amazonaws.com/fotos/BotinBlancoSinCordon2.png"}
               category="Botas"
             />
           </Link>
           <Link href="/Calzado">
             <CategoryCard
-              imageSrc="/FotosDefinitivas/9.png"
+              imageSrc={"https://gemmastore.s3.amazonaws.com/fotos/BotasEstrellasBlancas4.png"}
               category="Calzado"
             />
           </Link>
           <Link href="/Lingerie">
             <CategoryCard
-              imageSrc="/FotosDefinitivas/26.png"
+              imageSrc={"https://gemmastore.s3.amazonaws.com/fotos/BotasNegrasAltas2.png"}
               category="Lingerie"
             />
           </Link>
           <Link href="/Croptops">
             <CategoryCard
-              imageSrc="/FotosDefinitivas/14.png"
+              imageSrc={"https://gemmastore.s3.amazonaws.com/fotos/BotaBlancaTaconAlto6.png"}
               category="Croptops"
             />
           </Link>
