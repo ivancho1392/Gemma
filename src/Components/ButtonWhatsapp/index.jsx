@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 
 export const ButtonWhatsapp = () => {
   return (
-    <div className="fixed bottom-12 left-4 p-3 rounded-lg cursor-pointer">
+    <div className="fixed bottom-12 left-4 p-3 rounded-lg cursor-pointer" style={{ zIndex: 100 }}>
       <div className='mb-4'>
         <Link className={styles.btnWhatsapp} href="http://wa.me/50763168396">
           <Image

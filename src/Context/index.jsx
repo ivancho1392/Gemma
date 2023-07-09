@@ -48,6 +48,18 @@ export const ShoppingCartProvider = ({ children }) => {
     setIsThreeBarsOpen(!isThreeBarsOpen);
   };
 
+  //Account Options . Open/close/toggle
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
+  const openAccount = () => {
+    setIsAccountOpen(true);
+  };
+  const closeAccount = () => {
+    setIsAccountOpen(false);
+  };
+  const ToggleAccount= () => {
+    setIsAccountOpen(!isAccountOpen);
+  };
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -69,7 +81,11 @@ export const ShoppingCartProvider = ({ children }) => {
         isThreeBarsOpen,
         openThreebars,
         closeThreebars,
-        ToggleThreebars
+        ToggleThreebars,
+        isAccountOpen,
+        openAccount,
+        closeAccount,
+        ToggleAccount
       }}
     >
       {children}

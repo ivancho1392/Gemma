@@ -12,7 +12,7 @@ const Navbar = () => {
   const context = useContext(ShoppingCartContext);
   const router = useRouter();
 
-  const isActiveLink = (pathname) => {
+  const isActiveLink = pathname => {
     return router.pathname === pathname ? "border-b-2 border-gray-500" : "";
   };
 
@@ -24,6 +24,7 @@ const Navbar = () => {
             <IoReorderThreeOutline
               className="h-6 w-6"
               onClick={() => {
+                context.closeAccount();
                 context.closeProductDetail();
                 context.closeCheckOut();
                 context.ToggleThreebars();
@@ -35,16 +36,17 @@ const Navbar = () => {
       <ul className="flex items-end gap-3">
         <li className="font-semibold text-lg">
           <Link href="/">
-            <Image 
-            src="/Logos/logogema.svg" 
-            alt="1" 
-            width={80} 
-            height={80} 
-            onClick={() => {
-              context.closeCheckOut();
-              context.closeProductDetail();
-              context.closeThreebars();
-            }}
+            <Image
+              src="/Logos/logogema.svg"
+              alt="1"
+              width={80}
+              height={80}
+              onClick={() => {
+                context.closeAccount();
+                context.closeCheckOut();
+                context.closeProductDetail();
+                context.closeThreebars();
+              }}
             />
           </Link>
         </li>
@@ -57,21 +59,26 @@ const Navbar = () => {
               scrollOptions={{ top: 0 }}
               legacyBehavior
             >
-              <a className={isActiveLink("/Todos")}
-            onClick={() => {
-              context.closeCheckOut();
-              context.closeProductDetail();
-              context.closeThreebars();
-            }}
-            >Todos</a>
+              <a
+                className={isActiveLink("/Todos")}
+                onClick={() => {
+                  context.closeAccount();
+                  context.closeCheckOut();
+                  context.closeProductDetail();
+                  context.closeThreebars();
+                }}
+              >
+                Todos
+              </a>
             </Link>
           </li>
         </div>
         <div className="hidden sm:block">
           <li>
             <a
-              className='cursor-pointer'
+              className="cursor-pointer"
               onClick={() => {
+                context.closeAccount();
                 context.closeCheckOut();
                 context.closeProductDetail();
                 context.ToggleThreebars();
@@ -95,6 +102,7 @@ const Navbar = () => {
               <a
                 className={isActiveLink("/MyOrder")}
                 onClick={() => {
+                  context.closeAccount();
                   context.closeCheckOut();
                   context.closeProductDetail();
                   context.closeThreebars();
@@ -106,13 +114,22 @@ const Navbar = () => {
           </li>
         </div>
         <li className="flex ">
-          <CiUser className="h-6 w-6" />
+            <CiUser
+              className="h-6 w-6"
+              onClick={() => {
+                context.ToggleAccount();
+                context.closeCheckOut();
+                context.closeProductDetail();
+                context.closeThreebars();
+              }}
+            />
         </li>
         <li className="flex ">
           {context.count === 0 ? (
             <LuShoppingBag
               className="h-6 w-6"
               onClick={() => {
+                context.closeAccount();
                 context.ToggleCheckOut();
                 context.closeProductDetail();
                 context.closeThreebars();
@@ -122,6 +139,7 @@ const Navbar = () => {
             <HiOutlineShoppingBag
               className="h-6 w-6"
               onClick={() => {
+                context.closeAccount();
                 context.ToggleCheckOut();
                 context.closeProductDetail();
                 context.closeThreebars();
