@@ -1,0 +1,15 @@
+.justified_text1 {
+  margin: 40px 16px 8px 16px;
+  text-align: justify;
+  max-width: 700px;
+}
+
+.justified_text {
+  margin: 8px 40px 8px 40px;
+  text-align: justify;
+  max-width: 700px;
+}
+
+.justified_text li {
+  list-style-type: disc; /* Puedes usar diferentes valores como "circle", "square", "decimal", etc. */
+}

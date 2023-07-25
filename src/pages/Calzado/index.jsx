@@ -11,7 +11,7 @@ export default function Pyjamas() {
     <>
       <Layout>
         <h1 className="text-3xl mt-8">Calzado</h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3">
+        <div className="max-w-3xl grid grid-cols-2 sm:grid-cols-3">
           {calzadoProducts.map(product => (
             <Card
               key={product.productId}

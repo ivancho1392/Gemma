@@ -11,7 +11,7 @@ export default function Lingerie() {
     <>
       <Layout>
         <h1 className="text-3xl mt-8">Lingerie</h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3">
+        <div className="max-w-3xl grid grid-cols-2 sm:grid-cols-3">
           {lingerieProducts.map((product) => (
             <Card
               key={product.id}
