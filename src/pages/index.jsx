@@ -11,19 +11,17 @@ import { ShoppingCartContext } from "../Context";
 
 export default function Home() {
   const context = useContext(ShoppingCartContext);
+  var productsData = [];
   
   const fetchProducts = async () => {
-    try {
-      const productsData = await getProductByCategory("Botas");
+      productsData = await getProductByCategory("Botas");
+      console.log("productos recibidos:");
+      console.log(productsData);
       context.setProducts(productsData);
-      context.setLoading(false);
-    } catch (error) {
-      console.log("La solicitud ha fallado");
-      console.log(error);
-    }
   }
 
   useEffect(() => {
+    productsData = [];
     fetchProducts();
   }, []);
 
@@ -54,7 +52,7 @@ export default function Home() {
         </div>
         <h1 className="text-3xl mt-8">Tendencias</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3">
-          {context.products && context.products.map((product) => (
+            {context.products && context.products.map((product) => (
             <Card
               key={product.id}
               imageSrc={product.imageURL[0]}

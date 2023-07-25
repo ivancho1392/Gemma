@@ -107,6 +107,7 @@ export const ShoppingCartProvider = ({ children }) => {
         closeAccount,
         ToggleAccount,
         products,
+        setProducts,
         loading
       }}
     >
