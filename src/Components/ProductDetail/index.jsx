@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "./styles.module.css";
 import { GrClose } from "react-icons/gr";
 import Image from "next/image";
@@ -7,9 +7,21 @@ import { ShoppingCartContext } from "../../Context";
 const ProductDetail = () => {
   const context = useContext(ShoppingCartContext);
 
-  const renderButton = (id) => {
+  if (!context.productToShow || !context.productToShow.imageURL) {
+    return null; // O muestra un mensaje de carga, etc.
+  }
+
+  useEffect(() => {
+    context.setMainImage(context.productToShow.imageURL[1]);
+  }, [context.productToShow]);
+
+  const handleImageClick = (src) => {
+    context.setMainImage(src);
+  };
+
+  const renderButton = id => {
     const isInCart =
-      context.cartProducts.filter((product) => product.id === id).length > 0;
+      context.cartProducts.filter(product => product.id === id).length > 0;
 
     if (isInCart) {
       return (
@@ -29,12 +41,12 @@ const ProductDetail = () => {
     }
   };
 
-  const addProductToCart = (productData) => {
+  const addProductToCart = productData => {
     context.setCartProducts([...context.cartProducts, productData]);
     context.setCount(context.count + 1);
     context.openCheckOut();
     context.closeProductDetail();
-    context.closeThreebars();
+    context.closeAccount();
   };
 
   return (
@@ -59,7 +71,7 @@ const ProductDetail = () => {
       <figure className="flex justify-center">
         <Image
           className="rounded-lg"
-          src={context.productToShow.imageSrc}
+          src={context.mainImage}
           alt="1"
           width={320}
           height={480}
@@ -68,24 +80,27 @@ const ProductDetail = () => {
       <figure className="flex justify-between m-4">
         <Image
           className="rounded-lg cursor-pointer"
-          src={context.productToShow.imageSrc}
+          src={context.productToShow.imageURL[0]}
           alt="1"
           width={96}
           height={144}
+          onClick={() => handleImageClick(context.productToShow.imageURL[0])}
         />
         <Image
           className="rounded-lg cursor-pointer"
-          src={context.productToShow.imageSrc}
+          src={context.productToShow.imageURL[1]}
           alt="1"
           width={96}
           height={144}
+          onClick={() => handleImageClick(context.productToShow.imageURL[1])}
         />
         <Image
           className="rounded-lg cursor-pointer"
-          src={context.productToShow.imageSrc}
+          src={context.productToShow.imageURL[2]}
           alt="1"
           width={96}
           height={144}
+          onClick={() => handleImageClick(context.productToShow.imageURL[2])}
         />
       </figure>
 
@@ -101,54 +116,36 @@ const ProductDetail = () => {
 
       {/*Size */}
       <div>
-        <h2 className="font-medium text-md ml-4 mt-4">Talla</h2>
-        <ul className="flex justify-between p-4 ml-4 mr-4">
-          <li className="cursor-pointer border w-8 h-6 flex justify-center">
-            XS
-          </li>
-          <li className="cursor-pointer border w-8 h-6 flex justify-center">
-            S
-          </li>
-          <li className="cursor-pointer border w-8 h-6 flex justify-center">
-            M
-          </li>
-          <li className="cursor-pointer border w-8 h-6 flex justify-center">
-            L
-          </li>
-          <li className="cursor-pointer border w-8 h-6 flex justify-center">
-            LG
-          </li>
+        <h2 className="font-medium text-md ml-4 mt-4">Tallas disponibles</h2>
+        <ul className="flex justify-center p-4 ml-4 mr-4">
+          {context.productToShow.size}
         </ul>
       </div>
 
       {/*Color */}
       <div>
-        <h2 className="font-medium text-md ml-4 mt-4 mr-4">Color</h2>
+        <h2 className="font-medium text-md ml-4 mt-4 mr-4">
+          Colores disponibles
+        </h2>
         <ul className="flex justify-center">
           <li className="cursor-pointer border flex justify-center w-full m-4">
-            Negro
-          </li>
-          <li className="cursor-pointer border flex justify-center w-full m-4">
-            Blanco
-          </li>
-          <li className="cursor-pointer border flex justify-center w-full m-4">
-            Rojo
+            {context.productToShow.color}
           </li>
         </ul>
       </div>
 
       {/*Quantity */}
-      <div>
+      {/* <div>
         <h2 className="font-medium text-md ml-4 mt-4 ">Cantidad</h2>
         <ul className="flex p-4 ml-4 mr-4 justify-center align-middle ">
           <li className="border cursor-pointer flex justify-center w-8">-</li>
           <li className="border flex justify-center w-8">1</li>
           <li className="border cursor-pointer flex justify-center w-8">+</li>
         </ul>
-      </div>
+      </div> */}
 
       {/*Button Add to Cart */}
-      {renderButton(context.productToShow.id)}
+      {renderButton(context.productToShow.productId)}
 
       <p className="text-sm font-medium p-4">
         {context.productToShow.description}

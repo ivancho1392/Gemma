@@ -50,11 +50,11 @@ const CheckoutSideMenu = () => {
       <div className="w-65 h-30 rounded-lg mb-16 items-center justify-center flex-1">
         {context.cartProducts.map((cartProduct) => (
           <ProductList
-            key={cartProduct.id}
-            id={cartProduct.id}
+            key={cartProduct.productId}
+            id={cartProduct.productId}
             price={cartProduct.price}
             name={cartProduct.name}
-            imageSrc={cartProduct.imageSrc}
+            imageSrc={cartProduct.imageURL[0]}
             handleDelete={handleDelete}
           />
         ))}

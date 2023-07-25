@@ -24,11 +24,11 @@ export default function MyOrder() {
         <div className="flex flex-col w-80 mt-4">
           {lastOrder.products.map((product) => (
             <ProductList
-              key={product.id}
-              id={product.id}
+              key={product.productId}
+              id={product.productId}
               price={product.price}
               name={product.name}
-              imageSrc={product.imageSrc}
+              imageSrc={product.imageURL[0]}
             />
           ))}
 

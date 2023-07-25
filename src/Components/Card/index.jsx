@@ -4,7 +4,7 @@ import { BsFillBagCheckFill } from "react-icons/bs";
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
 
-const Card = ({ imageSrc, category, price, name, product }) => {
+const Card = ({ imageURL, category, price, name, product }) => {
   const context = useContext(ShoppingCartContext);
 
   const showProduct = (productDetail) => {
@@ -12,7 +12,6 @@ const Card = ({ imageSrc, category, price, name, product }) => {
     context.setProductToShow(productDetail);
     context.closeCheckOut();
     context.closeCategories();
-    console.log(productDetail);
   };
 
   const addProductToCart = (event, productData) => {
@@ -58,7 +57,7 @@ const Card = ({ imageSrc, category, price, name, product }) => {
         {renderIcon(product.id)}
         <Image
           className="rounded-lg object-cover w-full h-full"
-          src={imageSrc}
+          src={imageURL[0]}
           alt="1"
           width={200}
           height={300}

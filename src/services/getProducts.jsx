@@ -34,3 +34,4 @@ export const getProductByCategory = async (category) => {
     console.log(error);
   }
 };
+

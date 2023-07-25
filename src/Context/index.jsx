@@ -30,6 +30,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
   //Product Detail . Show product
   const [productToShow, setProductToShow] = useState({});
+  const [mainImage, setMainImage] = useState({});
 
   //ShoppingCart . Add products to cart
   const [cartProducts, setCartProducts] = useState([]);
@@ -63,22 +64,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
   //Product Array from DynamoDB. 
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  const fetchProducts = async () => {
-    try {
-      const productsData = await getProducts();
-      setProducts(productsData);
-      setLoading(false);
-    } catch (error) {
-      console.log("La solicitud ha fallado");
-      console.log(error);
-    }
-  }
+  const [fetchedCategories, setFetchedCategories] = useState({});
 
   return (
     <ShoppingCartContext.Provider
@@ -108,7 +94,10 @@ export const ShoppingCartProvider = ({ children }) => {
         ToggleAccount,
         products,
         setProducts,
-        loading
+        fetchedCategories,
+        setFetchedCategories,
+        mainImage,
+        setMainImage
       }}
     >
       {children}

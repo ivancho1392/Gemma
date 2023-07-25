@@ -3,27 +3,16 @@ import CategoryCard from "../Components/CategoryCard";
 import Card from "../Components/Card";
 import VideoComponent from "../Components/VideoComponent";
 import Link from "next/link";
-import { getProductByCategory } from "../services/getProducts";
 import ListFooter from "../Components/ListFooter"
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import { ShoppingCartContext } from "../Context";
+import { useFetchProductsByCategory } from "../utils/getProductsUtil";
 
 
 export default function Home() {
   const context = useContext(ShoppingCartContext);
-  var productsData = [];
+  const homeProducts = useFetchProductsByCategory("Botas");
   
-  const fetchProducts = async () => {
-      productsData = await getProductByCategory("Botas");
-      console.log("productos recibidos:");
-      console.log(productsData);
-      context.setProducts(productsData);
-  }
-
-  useEffect(() => {
-    productsData = [];
-    fetchProducts();
-  }, []);
 
   return (
     <div>
@@ -52,11 +41,11 @@ export default function Home() {
         </div>
         <h1 className="text-3xl mt-8">Tendencias</h1>
         <div className="grid grid-cols-2 sm:grid-cols-3">
-            {context.products && context.products.map((product) => (
+          {homeProducts.map((product) => (
             <Card
-              key={product.id}
-              imageSrc={product.imageURL[0]}
-              category={product.category}
+              key={product.productId}
+              imageURL={product.imageURL}
+              category={product.category}  
               price={product.price}
               name={product.name}
               product={product}
