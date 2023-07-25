@@ -27,7 +27,7 @@ const Navbar = () => {
                 context.closeAccount();
                 context.closeProductDetail();
                 context.closeCheckOut();
-                context.ToggleThreebars();
+                context.ToggleCategories();
               }}
             />
           </li>
@@ -45,7 +45,7 @@ const Navbar = () => {
                 context.closeAccount();
                 context.closeCheckOut();
                 context.closeProductDetail();
-                context.closeThreebars();
+                context.closeCategories();
               }}
             />
           </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
                   context.closeAccount();
                   context.closeCheckOut();
                   context.closeProductDetail();
-                  context.closeThreebars();
+                  context.closeCategories();
                 }}
               >
                 Todos
@@ -81,7 +81,7 @@ const Navbar = () => {
                 context.closeAccount();
                 context.closeCheckOut();
                 context.closeProductDetail();
-                context.ToggleThreebars();
+                context.ToggleCategories();
               }}
             >
               Categorias
@@ -105,7 +105,7 @@ const Navbar = () => {
                   context.closeAccount();
                   context.closeCheckOut();
                   context.closeProductDetail();
-                  context.closeThreebars();
+                  context.closeCategories();
                 }}
               >
                 Mi Pedido
@@ -120,7 +120,7 @@ const Navbar = () => {
                 context.ToggleAccount();
                 context.closeCheckOut();
                 context.closeProductDetail();
-                context.closeThreebars();
+                context.closeCategories();
               }}
             />
         </li>
@@ -132,7 +132,7 @@ const Navbar = () => {
                 context.closeAccount();
                 context.ToggleCheckOut();
                 context.closeProductDetail();
-                context.closeThreebars();
+                context.closeCategories();
               }}
             />
           ) : (
@@ -142,7 +142,7 @@ const Navbar = () => {
                 context.closeAccount();
                 context.ToggleCheckOut();
                 context.closeProductDetail();
-                context.closeThreebars();
+                context.closeCategories();
               }}
             />
           )}

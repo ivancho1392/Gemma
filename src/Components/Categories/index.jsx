@@ -3,33 +3,17 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context";
 import styles from "./styles.module.css";
 
-const ThreeBars = () => {
+const Categories = () => {
   const context = useContext(ShoppingCartContext);
 
   return (
     <aside
-      className={`flex ${context.isThreeBarsOpen ? "grid" : "hidden"} ${
-        styles.ThreeBars
+      className={`flex ${context.isCategoriesOpen ? "grid" : "hidden"} ${
+        styles.Categories
       } shadow-2xl bg-white fixed left-0 border border-black rounded-lg flex-col p-6`}
     >
       <ul>
-        <li className="mb-2 ">
-          <Link
-            href="/Todos"
-            passHref
-            scroll={false}
-            scrollOptions={{ top: 0 }}
-            legacyBehavior
-          >
-            <a className='font-bold text-lg'
-              onClick={() => {
-                context.closeThreebars();
-              }}
-            >
-              Todos
-            </a>
-          </Link>
-        </li>
+
         <li className="mb-2">
           <Link
             href="/Botas"
@@ -40,27 +24,10 @@ const ThreeBars = () => {
           >
             <a
               onClick={() => {
-                context.closeThreebars();
+                context.closeCategories();
               }}
             >
               Botas
-            </a>
-          </Link>
-        </li>
-        <li className="mb-2">
-          <Link
-            href="/Lingerie"
-            passHref
-            scroll={false}
-            scrollOptions={{ top: 0 }}
-            legacyBehavior
-          >
-            <a
-              onClick={() => {
-                context.closeThreebars();
-              }}
-            >
-              Lingerie
             </a>
           </Link>
         </li>
@@ -74,10 +41,27 @@ const ThreeBars = () => {
           >
             <a
               onClick={() => {
-                context.closeThreebars();
+                context.closeCategories();
               }}
             >
-              Calzado
+              Mocasines
+            </a>
+          </Link>
+        </li>
+        <li className="mb-2">
+          <Link
+            href="/Lingerie"
+            passHref
+            scroll={false}
+            scrollOptions={{ top: 0 }}
+            legacyBehavior
+          >
+            <a
+              onClick={() => {
+                context.closeCategories();
+              }}
+            >
+              Lenceria
             </a>
           </Link>
         </li>
@@ -91,10 +75,27 @@ const ThreeBars = () => {
           >
             <a
               onClick={() => {
-                context.closeThreebars();
+                context.closeCategories();
               }}
             >
               Croptops
+            </a>
+          </Link>
+        </li>
+        <li className="mb-2 ">
+          <Link
+            href="/Todos"
+            passHref
+            scroll={false}
+            scrollOptions={{ top: 0 }}
+            legacyBehavior
+          >
+            <a className='font-bold text-lg'
+              onClick={() => {
+                context.closeCategories();
+              }}
+            >
+              Todos los productos
             </a>
           </Link>
         </li>
@@ -103,4 +104,4 @@ const ThreeBars = () => {
   );
 };
 
-export default ThreeBars;
+export default Categories;

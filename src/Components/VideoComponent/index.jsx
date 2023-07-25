@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-const VideoComponent = ({videoSrc}) => {
+const VideoComponent = ({videoSrc, imageSrc}) => {
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const VideoComponent = ({videoSrc}) => {
     return (
       <Image
       className="rounded-lg object-cover w-full h-full"
-      src="/Banners/banner1.png"
+      src={imageSrc}
       alt="1"
       width={801}
       height={100}

@@ -43,7 +43,7 @@ const AccountOptions = () => {
               context.closeAccount();
             }}
           >
-            Sign Out
+            Log Out
           </a>
         </Link>
       </li>

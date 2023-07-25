@@ -1,5 +1,5 @@
 import { ButtonWhatsapp } from "../ButtonWhatsapp";
-import ThreeBars from "../ThreeBars";
+import Categories from "../Categories";
 import ProductDetail from "../ProductDetail";
 import CheckoutSideMenu from "../CheckoutSideMenu";
 import AccountOptions from "../AccountOptions";
@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       {children}
       <ButtonWhatsapp />
       <AccountOptions />
-      <ThreeBars />
+      <Categories />
       <ProductDetail />
       <CheckoutSideMenu />
     </div>

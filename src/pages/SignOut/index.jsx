@@ -9,15 +9,15 @@ export default function SignIn() {
     const handleSignOut= () => {
         signOut();
         alert("Sesion cerrada con exito");
-        router.push("/AdminControlPanel");
+        router.push("/");
       };
 
     return (
       <Layout>
-        <h2>Sign Out</h2>
+        <h2>Log Out</h2>
         <div className={styles.form}>
           <button className={styles.button1} onClick={handleSignOut}>
-            Click to Sign Out
+            Click to Log Out
           </button>
           </div>
       </Layout>

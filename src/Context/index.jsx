@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+import { getProducts } from "../services/getProducts";
 
 export const ShoppingCartContext = createContext();
 
@@ -36,16 +37,16 @@ export const ShoppingCartProvider = ({ children }) => {
   //ShoppingCart . Order
   const [order, setOrder] = useState([]);
 
-  //ThreeBar . Open/close/toggle
-  const [isThreeBarsOpen, setIsThreeBarsOpen] = useState(false);
-  const openThreebars = () => {
-    setIsThreeBarsOpen(true);
+  //Categories . Open/close/toggle
+  const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+  const openCategories = () => {
+    setIsCategoriesOpen(true);
   };
-  const closeThreebars = () => {
-    setIsThreeBarsOpen(false);
+  const closeCategories = () => {
+    setIsCategoriesOpen(false);
   };
-  const ToggleThreebars= () => {
-    setIsThreeBarsOpen(!isThreeBarsOpen);
+  const ToggleCategories= () => {
+    setIsCategoriesOpen(!isCategoriesOpen);
   };
 
   //Account Options . Open/close/toggle
@@ -59,6 +60,25 @@ export const ShoppingCartProvider = ({ children }) => {
   const ToggleAccount= () => {
     setIsAccountOpen(!isAccountOpen);
   };
+
+  //Product Array from DynamoDB. 
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const productsData = await getProducts();
+      setProducts(productsData);
+      setLoading(false);
+    } catch (error) {
+      console.log("La solicitud ha fallado");
+      console.log(error);
+    }
+  }
 
   return (
     <ShoppingCartContext.Provider
@@ -78,14 +98,16 @@ export const ShoppingCartProvider = ({ children }) => {
         ToggleCheckOut,
         order,
         setOrder,
-        isThreeBarsOpen,
-        openThreebars,
-        closeThreebars,
-        ToggleThreebars,
+        isCategoriesOpen,
+        openCategories,
+        closeCategories,
+        ToggleCategories,
         isAccountOpen,
         openAccount,
         closeAccount,
-        ToggleAccount
+        ToggleAccount,
+        products,
+        loading
       }}
     >
       {children}
