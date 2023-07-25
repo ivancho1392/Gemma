@@ -11,10 +11,11 @@
     }
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 820px) {
     .categoryCard {
       height: 250px;
       width: 200px;
+      margin: 8px;
     }
   }
 
@@ -22,19 +23,20 @@
     .categoryCard {
       height: 277px;
       width: 222px;
+      margin: 12px;
     }
   }
-
+/* 
   @media screen and (min-width: 1024px) {
     .categoryCard {
       height: 400px;
       width: 320px;
     }
-  }
+  } */
   
-  @media screen and (min-width: 1290px) {
+  @media screen and (min-width: 1350px) {
     .categoryCard {
-      height: 500px;
-      width: 400px;
+      height: 400px;
+      width: 320px;
     }
   }

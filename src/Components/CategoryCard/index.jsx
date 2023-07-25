@@ -15,11 +15,11 @@ const CategoryCard = ({ imageSrc, category}) => {
           {category}
         </span>
         <Image
-          className="rounded-lg object-cover w-full h-full "
+          className="rounded-lg object-cover h-full w-full"
           src={imageSrc}
           alt="1"
-          width={256}
-          height={321}
+          width={200}
+          height={256}
         />
       </figure>
     </div>

@@ -10,17 +10,15 @@ const ProductDetail = () => {
 
   useEffect(() => {
     if (context.productToShow && context.productToShow.imageURL) {
-      // Al montar el componente, establecer la primera imagen como la principal
       setMainImage(context.productToShow.imageURL[1]);
     }
   }, [context.productToShow]);
 
   if (!context.productToShow || !context.productToShow.imageURL) {
-    return null; // O muestra un mensaje de carga, etc.
+    return null; 
   }
 
   const handleImageClick = src => {
-    // Actualizar la imagen principal al hacer clic en una de las otras imágenes
     setMainImage(src);
   };
 
@@ -139,16 +137,6 @@ const ProductDetail = () => {
           </li>
         </ul>
       </div>
-
-      {/*Quantity */}
-      {/* <div>
-        <h2 className="font-medium text-md ml-4 mt-4 ">Cantidad</h2>
-        <ul className="flex p-4 ml-4 mr-4 justify-center align-middle ">
-          <li className="border cursor-pointer flex justify-center w-8">-</li>
-          <li className="border flex justify-center w-8">1</li>
-          <li className="border cursor-pointer flex justify-center w-8">+</li>
-        </ul>
-      </div> */}
 
       {/*Button Add to Cart */}
       {renderButton(context.productToShow.productId)}

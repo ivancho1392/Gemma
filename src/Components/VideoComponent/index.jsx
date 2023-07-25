@@ -26,6 +26,7 @@ const VideoComponent = ({videoSrc, imageSrc}) => {
       alt="1"
       width={801}
       height={100}
+      priority 
     />
     )
   }
