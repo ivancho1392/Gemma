@@ -4,13 +4,10 @@ import Card from "../Components/Card";
 import VideoComponent from "../Components/VideoComponent";
 import Link from "next/link";
 import ListFooter from "../Components/ListFooter"
-import { useContext} from "react";
-import { ShoppingCartContext } from "../Context";
 import { useFetchProductsByCategory } from "../utils/getProductsUtil";
 
 
 export default function Home() {
-  const context = useContext(ShoppingCartContext);
   const homeProducts = useFetchProductsByCategory("Botas");
   
 

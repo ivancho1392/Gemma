@@ -25,7 +25,7 @@ const Card = ({ imageURL, category, price, name, product }) => {
 
   const renderIcon = (id) => {
     const isInCart =
-      context.cartProducts.filter((product) => product.id === id).length > 0;
+      context.cartProducts.filter((product) => product.productId === id).length > 0;
 
     if (isInCart) {
       return (
@@ -54,7 +54,7 @@ const Card = ({ imageURL, category, price, name, product }) => {
         <span className="absolute bottom-0 left-0 bg-white/70 rounded-lg text-black text-sm font-medium m-2">
           {category}
         </span>
-        {renderIcon(product.id)}
+        {renderIcon(product.productId)}
         <Image
           className="rounded-lg object-cover w-full h-full"
           src={imageURL[0]}

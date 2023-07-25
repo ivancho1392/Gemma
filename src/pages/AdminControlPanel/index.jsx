@@ -12,8 +12,8 @@ export default function Admin() {
       // Si no está autenticado, redirigir al inicio de sesión
       router.push("/SignIn");
     }
-  }, []);
-  
+  }, [router]); // Incluye 'router' en el arreglo de dependencias
+
   return (
     <>
       <Layout>

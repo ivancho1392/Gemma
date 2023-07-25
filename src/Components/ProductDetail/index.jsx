@@ -11,17 +11,9 @@ const ProductDetail = () => {
     return null; // O muestra un mensaje de carga, etc.
   }
 
-  useEffect(() => {
-    context.setMainImage(context.productToShow.imageURL[1]);
-  }, [context.productToShow]);
-
-  const handleImageClick = (src) => {
-    context.setMainImage(src);
-  };
-
   const renderButton = id => {
     const isInCart =
-      context.cartProducts.filter(product => product.id === id).length > 0;
+      context.cartProducts.filter(product => product.productId === id).length > 0;
 
     if (isInCart) {
       return (
@@ -71,37 +63,34 @@ const ProductDetail = () => {
       <figure className="flex justify-center">
         <Image
           className="rounded-lg"
-          src={context.mainImage}
+          src={context.productToShow.imageURL[0]}
           alt="1"
           width={320}
           height={480}
         />
       </figure>
       <figure className="flex justify-between m-4">
-        <Image
-          className="rounded-lg cursor-pointer"
-          src={context.productToShow.imageURL[0]}
-          alt="1"
-          width={96}
-          height={144}
-          onClick={() => handleImageClick(context.productToShow.imageURL[0])}
-        />
-        <Image
-          className="rounded-lg cursor-pointer"
-          src={context.productToShow.imageURL[1]}
-          alt="1"
-          width={96}
-          height={144}
-          onClick={() => handleImageClick(context.productToShow.imageURL[1])}
-        />
-        <Image
-          className="rounded-lg cursor-pointer"
-          src={context.productToShow.imageURL[2]}
-          alt="1"
-          width={96}
-          height={144}
-          onClick={() => handleImageClick(context.productToShow.imageURL[2])}
-        />
+          <Image
+            className="rounded-lg cursor-pointer"
+            src={context.productToShow.imageURL[0]}
+            alt="1"
+            width={96}
+            height={144}
+          />
+          <Image
+            className="rounded-lg cursor-pointer"
+            src={context.productToShow.imageURL[1]}
+            alt="1"
+            width={96}
+            height={144}
+          />
+          <Image
+            className="rounded-lg cursor-pointer"
+            src={context.productToShow.imageURL[2]}
+            alt="1"
+            width={96}
+            height={144}
+          />
       </figure>
 
       {/*Price and Note */}
