@@ -5,7 +5,7 @@ import { getProductByCategory } from "../services/getProducts";
 export const useFetchProductsByCategory = (category) => {
   const context = useContext(ShoppingCartContext);
 
-  const fetchProducts = useCallback(async (category) => {
+  const fetchProducts = useCallback(async () => {
     if (!context.fetchedCategories[category]) {
       const productsData = await getProductByCategory(category);
       context.setProducts([...context.products, ...productsData]);
@@ -17,8 +17,8 @@ export const useFetchProductsByCategory = (category) => {
   }, [category, context]);
 
   useEffect(() => {
-    fetchProducts(category);
-  }, [category, fetchProducts]);
+    fetchProducts();
+  }, [fetchProducts]);
 
   return context.products.filter((product) => product.category === category);
 };

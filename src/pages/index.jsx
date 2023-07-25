@@ -6,11 +6,9 @@ import Link from "next/link";
 import ListFooter from "../Components/ListFooter"
 import { useFetchProductsByCategory } from "../utils/getProductsUtil";
 
-
 export default function Home() {
   const homeProducts = useFetchProductsByCategory("Botas");
   
-
   return (
     <div>
       <Layout>
