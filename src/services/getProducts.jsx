@@ -25,7 +25,7 @@ export const getProductByID = async (productId) => {
 
 export const getProductByCategory = async (category) => {
   try {
-    const url = `${process.env.NEXT_PUBLIC_APIGATEWAY_URL}?category=${category}&limit=20  `;
+    const url = `${process.env.NEXT_PUBLIC_APIGATEWAY_URL}?category=${category}&limit=30  `;
     console.log(url);
     const response = await axios.get(url);
     return response.data;
