@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useFetchProductsByCategory } from "../utils/getProductsUtil";
 
 export default function Home() {
-  const tendenciasProducts = useFetchProductsByCategory("Botas");
+  const tendenciasProducts = useFetchProductsByCategory("Calzado");
   const nuevosProducts = useFetchProductsByCategory("Calzado");
   
   return (
