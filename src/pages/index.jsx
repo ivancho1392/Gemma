@@ -7,7 +7,7 @@ import { useFetchProductsByCategory } from "../utils/getProductsUtil";
 
 export default function Home() {
   const tendenciasProducts = useFetchProductsByCategory("Botas");
-  const nuevosProducts = useFetchProductsByCategory("Botas");
+  const nuevosProducts = useFetchProductsByCategory("Calzado");
   
   return (
     <div>
