@@ -13,7 +13,7 @@ export default function Botas() {
       <Layout>
         <VideoComponent
           videoSrc={process.env.NEXT_PUBLIC_VIDEO_BOTAS_URL}
-          imageSrc={process.env.NEXT_PUBLIC_BANNER2}
+          imageSrc={process.env.NEXT_PUBLIC_BANNER_BOTAS}
         />
         <h1 className="text-3xl mt-8">Botas</h1>
         <div className="max-w-3xl grid grid-cols-2 sm:grid-cols-3">

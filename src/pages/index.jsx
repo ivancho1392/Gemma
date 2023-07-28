@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
       <Layout>
-        <VideoComponent videoSrc={process.env.NEXT_PUBLIC_VIDEO_HOME_URL} imageSrc={process.env.NEXT_PUBLIC_BANNER1}/>
+        <VideoComponent videoSrc={process.env.NEXT_PUBLIC_VIDEO_HOME_URL} imageSrc={process.env.NEXT_PUBLIC_BANNER_HOME}/>
         <h1 className="text-3xl p-4 mt-4">Categorias</h1>
         <div className="grid grid-cols-2 md:grid-cols-4 ">
         <Link href="/Botas">
