@@ -106,6 +106,7 @@ const Navbar = () => {
                   context.closeCheckOut();
                   context.closeProductDetail();
                   context.closeCategories();
+                  context.setCartProducts(context.cartProducts.map(product => (product.quantity ? {...product,} : { ...product, quantity: 1 })));
                 }}
               >
                 Mi Pedido

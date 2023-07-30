@@ -3,9 +3,20 @@ import { GrClose } from "react-icons/gr";
 import Image from "next/image";
 import { ShoppingCartContext } from "../../Context";
 
-const ProductList = ({ price, name, imageSrc, handleDelete, id }) => {
+const ProductList = ({
+  price,
+  name,
+  imageSrc,
+  handleDelete,
+  id,
+  quantity,
+  handlerMinus,
+  handlerPlus
+}) => {
   const context = useContext(ShoppingCartContext);
   let renderGrClose;
+  let renderQuantity;
+
   if (handleDelete) {
     renderGrClose = (
       <GrClose
@@ -15,6 +26,28 @@ const ProductList = ({ price, name, imageSrc, handleDelete, id }) => {
         }}
         className="h-4 w-4 text-black cursor-pointer"
       />
+    );
+  }
+
+  if (quantity) {
+    renderQuantity = (
+      <div>
+        <ul className="flex justify-center">
+          <li 
+          onClick={() => {handlerMinus(id)}}
+          className="cursor-pointer border rounded px-2 flex justify-center w-full m-2  border-black text-black bg-gray-100">
+            -
+          </li>
+          <li className="border rounded px-2 flex justify-center w-full m-2  border-black text-black">
+            {quantity}
+          </li>
+          <li 
+          onClick={() => {handlerPlus(id)}}
+          className="cursor-pointer border rounded px-2 flex justify-center w-full m-2  border-black text-black bg-gray-100">
+            +
+          </li>
+        </ul>
+      </div>
     );
   }
 
@@ -35,6 +68,7 @@ const ProductList = ({ price, name, imageSrc, handleDelete, id }) => {
       <div className="flex items-center gap-2">
         <p className="text-lg font-medium">${price}</p>
         {renderGrClose}
+        {renderQuantity}
       </div>
     </div>
   );

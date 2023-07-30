@@ -17,19 +17,9 @@ const CheckoutSideMenu = () => {
   };
 
   const handleCheckout = () => {
-    const orderToAdd = {
-      date: "01.02.23",
-      products: context.cartProducts,
-      totalProducts: context.cartProducts.length,
-      totalPrice: getTotalPrice(context.cartProducts),
-    };
-
-    context.setOrder([...context.order, orderToAdd]);
-    context.setCartProducts([]);
-    context.setCount(0);
+    context.setCartProducts(context.cartProducts.map(product => (product.quantity ? {...product,} : { ...product, quantity: 1 })));
     context.closeCheckOut();
   };
-
 
   return (
     <aside
