@@ -69,6 +69,9 @@ export const ShoppingCartProvider = ({ children }) => {
   //Final Product to order
   const [finalProducts, setFinalProducts] = useState([]);
 
+  //Final UserData to order
+  const [finalUserData, setFinalUserData] = useState([]);
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -102,7 +105,9 @@ export const ShoppingCartProvider = ({ children }) => {
         mainImage,
         setMainImage,
         finalProducts,
-        setFinalProducts
+        setFinalProducts,
+        finalUserData,
+        setFinalUserData
       }}
     >
       {children}
