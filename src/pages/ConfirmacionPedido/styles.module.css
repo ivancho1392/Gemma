@@ -13,3 +13,22 @@
 .justified_text li {
   list-style-type: disc; /* Puedes usar diferentes valores como "circle", "square", "decimal", etc. */
 }
+
+.text_right {
+  width: 70%;
+  text-align: right;
+  margin-right: 200px;
+}
+
+.text_left{
+  width: 70%;
+  text-align: left;
+  margin-left: 200px;
+}
+
+.text_left2{
+  width: 80%;
+  text-align: left;
+  margin-left: 100px;
+}
+

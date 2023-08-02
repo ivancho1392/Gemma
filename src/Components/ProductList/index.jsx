@@ -17,18 +17,6 @@ const ProductList = ({
   let renderGrClose;
   let renderQuantity;
 
-  if (handleDelete) {
-    renderGrClose = (
-      <GrClose
-        onClick={() => {
-          context.setCount(context.count - 1);
-          handleDelete(id);
-        }}
-        className="h-4 w-4 text-black cursor-pointer"
-      />
-    );
-  }
-
   if (quantity) {
     renderQuantity = (
       <div>
@@ -51,6 +39,18 @@ const ProductList = ({
     );
   }
 
+  if (handleDelete) {
+    renderGrClose = (
+      <GrClose
+        onClick={() => {
+          context.setCount(context.count - 1);
+          handleDelete(id);
+        }}
+        className="h-4 w-4 text-black cursor-pointer"
+      />
+    );
+  }
+
   return (
     <div className=" flex justify-between items-center mb-3 pr-4 pl-4">
       <div className="flex items-center gap-2">
@@ -67,8 +67,8 @@ const ProductList = ({
       </div>
       <div className="flex items-center gap-2">
         <p className="text-lg font-medium">${price}</p>
-        {renderGrClose}
         {renderQuantity}
+        {renderGrClose}
       </div>
     </div>
   );

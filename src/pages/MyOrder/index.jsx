@@ -13,6 +13,8 @@ export default function MyOrder() {
 
   const handleProcesarCompra = () => {
     context.setFinalProducts(context.cartProducts);
+    context.setCartProducts([]);
+    context.setCount(0);
   };
 
   const handleDelete = id => {

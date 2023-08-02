@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Layout from "../../Components/Layout";
 import styles from "./styles.module.css";
 import Link from "next/link";
@@ -8,6 +8,14 @@ import { ShoppingCartContext } from "../../Context";
 export default function Registro() {
   const context = useContext(ShoppingCartContext);
   const router = useRouter();
+
+  // Verificar si finalProducts está vacío al cargar la página
+  useEffect(() => {
+    if (!context.finalProducts || context.finalProducts.length === 0) {
+      router.push("/"); // Redirigir al page principal de la app
+    }
+  }, [context.finalProducts, router]);
+
   const initialFormState = {
     username: "",
     celphone: "",
@@ -18,13 +26,16 @@ export default function Registro() {
     city: "",
     addres: "",
     note: "",
-    permisoemails: false,
+    authnotifications: false,
   };
 
   const [formData, setFormData] = useState(initialFormState);
   const [error, setError] = useState("");
 
-  const handleVolver = () => {};
+  const handleVolver = () => {
+    context.setCartProducts(context.finalProducts);
+    context.setCount(context.finalProducts.length);
+  };
 
   const handleInputChange = event => {
     const { name, value, type, checked } = event.target;
@@ -36,6 +47,10 @@ export default function Registro() {
 
   const handleFormSubmit = event => {
     event.preventDefault();
+
+    if (!context.finalProducts || context.finalProducts.length === 0) {
+      setError("No hay ningún producto en la orden.");
+    }
 
     // Verificar campos obligatorios
     if (
@@ -60,13 +75,14 @@ export default function Registro() {
     const userData = {
       username: formData.username,
       celphone: formData.celphone,
+      phone: formData.phone,
       email: formData.email,
       country: formData.country,
       department: formData.department,
       city: formData.city,
       addres: formData.addres,
       note: formData.note,
-      permisoemails: formData.permisoemails,
+      authnotifications: formData.authnotifications,
     };
 
     console.log(userData);
@@ -149,8 +165,8 @@ export default function Registro() {
               <label>
                 <input
                   type="checkbox"
-                  name="permisoemails"
-                  checked={formData.permisoemails}
+                  name="authnotifications"
+                  checked={formData.authnotifications}
                   onChange={handleInputChange}
                 />
                 Enviar novedades y ofertas por Email?
