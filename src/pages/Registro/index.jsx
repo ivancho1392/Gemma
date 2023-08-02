@@ -85,7 +85,6 @@ export default function Registro() {
       authnotifications: formData.authnotifications,
     };
 
-    console.log(userData);
     context.setFinalUserData(userData);
 
     setError(""); // Limpiar el mensaje de error si todo está correcto

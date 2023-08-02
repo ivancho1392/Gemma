@@ -1,34 +1,34 @@
-.justified_text1 {
-  margin: 40px 16px 8px 16px;
+.seccion1 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  max-width: 500px;
+  margin: 12px 8px 12px 8px;
+  border-radius: 8px;
+  padding: 8px;
   text-align: justify;
-  max-width: 700px;
 }
 
-.justified_text {
-  margin: 8px 40px 120px 40px;
-  text-align: justify;
-  max-width: 700px;
+.seccion2 {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+    0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  margin: 12px auto;
+  overflow-x: auto;
 }
 
-.justified_text li {
-  list-style-type: disc; /* Puedes usar diferentes valores como "circle", "square", "decimal", etc. */
+.datos{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+    0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  max-width: 500px;
+  margin: 12px auto;
+  padding: 8px;
 }
 
-.text_right {
-  width: 70%;
-  text-align: right;
-  margin-right: 200px;
+.datos > p {
+  margin-left: 12px;
 }
-
-.text_left{
-  width: 70%;
-  text-align: left;
-  margin-left: 200px;
-}
-
-.text_left2{
-  width: 80%;
-  text-align: left;
-  margin-left: 100px;
-}
-
