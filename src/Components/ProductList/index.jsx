@@ -11,11 +11,13 @@ const ProductList = ({
   id,
   quantity,
   handlerMinus,
-  handlerPlus
+  handlerPlus,
+  totalPrice
 }) => {
   const context = useContext(ShoppingCartContext);
   let renderGrClose;
   let renderQuantity;
+  let renderTotalPrice;
 
   if (quantity) {
     renderQuantity = (
@@ -51,6 +53,12 @@ const ProductList = ({
     );
   }
 
+  if (totalPrice) {
+    renderTotalPrice = (
+      <p className="text-lg font-medium">${price * quantity}</p>
+    );
+  }
+
   return (
     <div className=" flex justify-between items-center mb-3 pr-4 pl-4">
       <div className="flex items-center gap-2">
@@ -68,6 +76,7 @@ const ProductList = ({
       <div className="flex items-center gap-2">
         <p className="text-lg font-medium">${price}</p>
         {renderQuantity}
+        {renderTotalPrice}
         {renderGrClose}
       </div>
     </div>

@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import Image from "next/image";
-import { ShoppingCartContext } from "../../Context";
 
 const ProductListResume = ({
   price,
@@ -9,7 +7,6 @@ const ProductListResume = ({
   quantity,
   description,
 }) => {
-  const context = useContext(ShoppingCartContext);
   const precioTotal = price * quantity ;
 
   return (

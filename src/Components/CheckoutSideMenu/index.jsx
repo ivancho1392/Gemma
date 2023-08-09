@@ -17,7 +17,9 @@ const CheckoutSideMenu = () => {
   };
 
   const handleCheckout = () => {
-    context.setCartProducts(context.cartProducts.map(product => (product.quantity ? {...product,} : { ...product, quantity: 1 })));
+    const addQuantity = context.cartProducts.map(product => (product.quantity ? {...product,} : { ...product, quantity: 1 }));
+    const addTotalPrice = addQuantity.map(product => (product.totalPrice ? {...product,} : { ...product, totalPrice: product.price}));
+    context.setCartProducts(addTotalPrice);
     context.closeCheckOut();
   };
 
