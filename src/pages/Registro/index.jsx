@@ -4,6 +4,7 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ShoppingCartContext } from "../../Context";
+import { postUser } from "../../services/postUser";
 
 export default function Registro() {
   const context = useContext(ShoppingCartContext);
@@ -27,6 +28,7 @@ export default function Registro() {
     addres: "",
     note: "",
     authnotifications: false,
+    datapolity: false,
   };
 
   const [formData, setFormData] = useState(initialFormState);
@@ -45,7 +47,7 @@ export default function Registro() {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const handleFormSubmit = event => {
+  const handleFormSubmit = async event => {
     event.preventDefault();
 
     if (!context.finalProducts || context.finalProducts.length === 0) {
@@ -71,6 +73,13 @@ export default function Registro() {
       return;
     }
 
+    if (!formData.datapolity) {
+      setError(
+        "Por favor lee las politicas de tratamiento de datos y si estas de acuerdo marca la casilla.",
+      );
+      return;
+    }
+
     // Datos completos, guardar en userData
     const userData = {
       username: formData.username,
@@ -83,9 +92,16 @@ export default function Registro() {
       addres: formData.addres,
       note: formData.note,
       authnotifications: formData.authnotifications,
+      datapolity: formData.datapolity,
     };
 
     context.setFinalUserData(userData);
+    try {
+      const response = await postUser(userData);
+      console.log("Respuesta del servidor:", response);
+    } catch (error) {
+      console.log("Error al enviar los datos del usuario:", error);
+    }
 
     setError(""); // Limpiar el mensaje de error si todo está correcto
     router.push("/ConfirmacionPedido");
@@ -169,6 +185,18 @@ export default function Registro() {
                   onChange={handleInputChange}
                 />
                 Enviar novedades y ofertas por Email?
+              </label>
+            </div>
+            <div className={styles.check}>
+              <label>
+                <input
+                  type="checkbox"
+                  name="datapolity"
+                  checked={formData.datapolity}
+                  onChange={handleInputChange}
+                />
+                Declaro que he leido y acepto las politicas de tratamiento de
+                datos.
               </label>
             </div>
             {error && <p className={styles.error}>{error}</p>}

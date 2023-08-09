@@ -1,10 +1,10 @@
 .seccion1 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-  max-width: 500px;
+  width: 500px;
   margin: 12px 8px 12px 8px;
   border-radius: 8px;
-  padding: 8px;
+  padding: 24px;
   text-align: justify;
 }
 
@@ -24,7 +24,7 @@
     0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  max-width: 500px;
+  width: 500px;
   margin: 12px auto;
   padding: 8px;
 }

@@ -49,8 +49,6 @@ export default function MyOrder() {
       }
       return product;
     });
-    console.log("Se ha dado click a +. updatedCartProducts= ");
-    console.log(updatedCartProducts);
     context.setCartProducts(updatedCartProducts);
     setTotalPrice(getTotalPriceMyOrder(updatedCartProducts));
   }
